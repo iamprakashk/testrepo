@@ -34,3 +34,23 @@ Status: pre-PRD. Phases 0–1 agreed in principle. Last updated: 2026-10-12.
 6. Rules for conflicts, gaps and duplicates: a blank with a reason beats a guess. Conflicting sources are logged, not silently resolved.
 7. Workbook layout: Data tab, Sources tab, Review tab, Run log tab.
 8. Tooling: to be decided in the PRD.
+
+## Pilot run 1 — Italy (2026-10-12)
+Inputs: `Italy.docx` (sourcing procedure) and `Italy.xlsx` (template, 2021–23 filled, 2024–26 to fill).
+
+**Blocked:** the session's network policy denies `download.terna.it`. All five source PDFs are on that host. No values extracted.
+
+Field → source map (from Italy.docx):
+| Table | 2024 | 2025 | 2026 |
+|---|---|---|---|
+| Installed capacity (MW) | Monthly Report Dec-24 | Annual Report 2025 ("Page 35"; link points to #page=165) | Monthly Report Jun-26: H1 additions Wind 328, Solar 3,093, Hydro 5 (pp. 14–15) |
+| Generation & consumption (GWh) | Monthly Report Dec-24 | Monthly Report Dec-25 | Monthly Report Jun-26 (H1 only) |
+| Line length (km) | Annual Report 2024 | Annual Report 2025 | = 2025 |
+| Transformer capacity (MVA) | Annual Report 2024 | Annual Report 2025 | = 2025 |
+| Substations (No.) | Annual Report 2024 | Annual Report 2025 | = 2025 |
+
+Template issues to resolve:
+1. Growth-rate rows mix units: rows 7/16/20 and 2021–23 use percent (0.2 = 0.2%), but E39 = 0.0013 and F51 = 0.0233 look like fractions. Growth rates for 2024–26 (E39:G39, E51:G51) are pre-filled without base values.
+2. 2025 capacity source: the doc says "Page 35", but the link points to page 165.
+3. 2026 capacity: the doc gives H1 additions for wind, solar and hydro only. Rule needed: is 2026 = 2025 + additions? What happens to thermoelectric?
+4. Category mapping: Terna reports wind, solar, geothermal and bioenergy separately. The template puts geothermal and bioenergy under Thermoelectrics, and only solar + wind under Renewables.
